@@ -90,15 +90,16 @@ end
 ```
 while true do
 	
-	s=io.read("*line")                                                              -->小数点后留3位
+	s=io.read("*line")                    -->小数点后留3位
 	s=string.format("%.3f", s or 0)
 	print(s)
 	function formatNum(s)
-		local _,count=string.gsub(s, "^(%d+)(%d%d%d)",'%1')   -->字符串模式匹配
+		local _,count=string.gsub(s, "^(%d+)(%d%d%d)",'%1')   
+		-->字符串模式匹配
 		if count==0 then
 			return s
 		else
-			return formatNum(string.gsub(s, "^(%d+)(%d%d%d.*)", '%1')) .. (string.gsub(s, "^(%d+)(%d%d%d)", ',%2'))                                                                                                  -->字符串模式匹配，分割递归调用
+			return formatNum(string.gsub(s, "^(%d+)(%d%d%d.*)", '%1')) .. (string.gsub(s, "^(%d+)(%d%d%d)", ',%2'))                                                                                                  								-->字符串模式匹配，分割递归调用
 		end
 	end
 	formatNum(s)
