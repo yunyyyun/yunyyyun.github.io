@@ -3,7 +3,7 @@
 
 协程的函数都放在全局的coroutine表里，_G.coroutine里一共5个函数：
 
-![](coroutine.jpg)
+![](img/coroutine.jpg)
 
 具体用法（代码出自云风大神）：
 
