@@ -42,7 +42,7 @@ for score in individualScores {
 
 其中Resources目录用于存放资源文件
 Sources目录下的源文件则会被编译成模块(module)并自动导入到 Playground 中，并且这个编译只会进行一次(或者我们对该目录下的文件进行修改的时候)，而非每次你敲入一个字母的时候就编译一次（playground文件里的代码会实时编译出结果，当代码太多会影响执行效率）。 
-另外，由于此目录下的文件都是被编译成模块导入的，只有被设置成 <font color=red>public</font> 的类型，属性或方法才能在 Playground 中使用。
+另外，由于此目录下的文件都是被编译成模块导入的，只有被设置成 public 的类型，属性或方法才能在 Playground 中使用。
 
 例如：
 在Sources新建func.swift,键入如下代码
