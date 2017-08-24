@@ -111,7 +111,7 @@ var s4: String?=nil
 ```
 以上4种写法区别？
 
-### 附上[leetcode第二题](https://leetcode.com/problems/add-two-numbers/description/)答案
+### 附上leetCode第二题答案
 
 ```
 class Solution {
