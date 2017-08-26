@@ -1,6 +1,7 @@
 
 ### String
 
+
 #### String初始化
 
 ```
@@ -22,6 +23,7 @@ let intValue = 4
 let str3 = "123\(intValue)"  //字符串插值
 ```
 
+
 #### String连接
 String+String :
 
@@ -35,6 +37,7 @@ String+Character :
 foo.append("!")
 ```
 注：只有var String才能可变
+
 
 #### 字符串长度
 字符长度：
@@ -62,6 +65,7 @@ print(word.lengthOfBytes(using: .unicode))//10
 print(word.lengthOfBytes(using: .utf8))   //6
 ```
 
+
 #### 访问和修改字符串
 每一个String值都有一个关联的索引(index)类型,它对应着字符串中的每一个字符的位置。使用index可获取每个字符：
 
@@ -73,6 +77,7 @@ greeting[greeting.index(after: greeting.startIndex)]// u
 let index = greeting.index(greeting.startIndex, offsetBy: 7)
 greeting[index]// a
 ```
+
 
 #### 字符串遍历
 
@@ -93,6 +98,7 @@ for i in 0..<str.characters.count{
 ```
 通过index方法遍历String不是一个好的方法
 
+
 #### 插入和删除
 插入:
 
@@ -109,6 +115,7 @@ let range = welcome.index(welcome.endIndex, offsetBy: -6)..<welcome.endIndex
 welcome.removeSubrange(range)
 ```
 
+
 #### 字符串比较：
 
 ```
@@ -124,6 +131,7 @@ if cafe == cafe2 {
 }
 ```
 注： (U+00E9)和(U+0065)+(U+0301)都是é 的有效表现方式
+
 
 #### 附上leetCode第三题(最大连续不重复子串)的解：
 
