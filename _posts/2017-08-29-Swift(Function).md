@@ -41,7 +41,7 @@ func sumOfArray(nums:[Int])-> Int{
 }
 sumOfArray(nums: [1,3,2])
 ```
-注：一个函数最多只能拥有一个可变参数。
+```注：一个函数最多只能拥有一个可变参数。```
 
 
 #### 输入输出参数
@@ -91,7 +91,7 @@ func addOne(a:Int)->Int{
 print(mathFunc(f: addOne, type: 0)(1))
 print(mathFunc(f: addOne, type: 1)(1))
 ```
-注：@escaping指逃逸闭包（如果一个闭包被作为一个参数传递给一个函数，并且在函数return之后才被唤起执行，那么这个闭包是逃逸闭包。）
+```注：@escaping指逃逸闭包（如果一个闭包被作为一个参数传递给一个函数，并且在函数return之后才被唤起执行，那么这个闭包是逃逸闭包。）```
 
 
 #### 嵌套函数
