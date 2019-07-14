@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "About"
+title: "关于"
 description: "my name is yun meng."
 header-img: "img/green.jpg"
 ---
@@ -10,7 +10,7 @@ header-img: "img/green.jpg"
 
 # 联系方式
 
-*   Email：zhaowuzichun@163.com
+*   Email：mengyun2012@163.com
 
 * * *
 

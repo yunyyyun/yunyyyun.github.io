@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Archive"
+title: "目录"
 description: "你看到的，是我的所有文章"
 header-img: "img/orange.jpg"
 ---
