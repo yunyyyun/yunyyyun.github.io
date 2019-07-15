@@ -29,14 +29,11 @@
 
 tcp即是通过重传机制保证数据传输的可靠性，依次观察上面第3步的各个tcp包，会发现如下几个特殊的包：
 
-- [TCP Window Update]: 即滑窗大小调整的包，用来通知对方（发送方）更新滑窗大小
+* [TCP Window Update] : 即滑窗大小调整的包，用来通知对方（发送方）更新滑窗大小
 
 - [TCP Previous segment not captured]：在TCP传输过程中，同一台主机发出的数据段应该是连续的，即后一个包的Seq号等于前一个包的Seq+Len（展开[TCP segment of a reassembled PDU]包可以看到Seq和Len，三次握手和四次挥手是例外），例如亲一个包：Seq: 60110, Ack: 222, Len: 1400，则下一个包的Seq=60110+1400=61510，否则就是丢包了。
-
 - [TCP Out_of_Order]：同样当Wireshark发现后一个包的Seq号小于前一个包的Seq Len时，就会认为是乱序了，因此提示 [TCP Out-of-Order] 。
-
 - [TCP Dup ACK 148#1]：表示重复应答#前的表示报文到哪个序号丢失，#后面的是表示第几次丢失。
-
 - [TCP Retransmission]：即丢包了后的重传
 
 ## Mac电脑抓iPhone包
