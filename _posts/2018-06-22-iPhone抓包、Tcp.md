@@ -4,7 +4,7 @@
 
 打开Wireshark选择本机mac的网卡，输入过滤条件：tcp.port == 80 && (ip.dst==111.231.221.195 || ip.src==111.231.221.195)开始抓包，接着mac浏览器输入http://111.231.221.195/getMusicXmlData.php?file=sadness发起http，就能看到这次请求的所有tcp包：
 
-![](/img/06–22-01.png)
+![](/img/06-22-01.png)
 
 如图所示，一个http请求包括如下过程：
 
@@ -39,7 +39,7 @@ tcp即是通过重传机制保证数据传输的可靠性，依次观察上面�
 
 - [TCP Retransmission]：即丢包了后的重传
 
-##Mac电脑抓iPhone包
+## Mac电脑抓iPhone包
 
 使用Wireshark抓包是基于网卡的，而要抓iPhone的包，只需要讲iPhone连上mac，然后终端输入
 
