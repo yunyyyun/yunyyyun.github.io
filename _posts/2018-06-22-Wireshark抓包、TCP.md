@@ -2,7 +2,13 @@
 
 ## Wireshark抓包
 
-打开Wireshark选择本机mac的网卡，输入过滤条件：tcp.port == 80 && (ip.dst==111.231.221.195 || ip.src==111.231.221.195)开始抓包，接着mac浏览器输入任意地址，例如：
+打开Wireshark选择本机mac的网卡，输入过滤条件筛选端口、源地址和目的地址：
+
+```
+tcp.port == 80 && (ip.dst==111.231.221.195 || ip.src==111.231.221.195)
+```
+
+开始抓包，接着mac浏览器输入任意地址，例如：
 
 ```
 http://111.231.221.195/getMusicXmlData.php?file=sadness
