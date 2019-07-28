@@ -74,11 +74,119 @@
    NSData *data = UIImageJPEGRepresentation(image, 1);
    self.imageData = [NSMutableData dataWithData:data];
    ```
+   
+3.  通过runloop优化，滑动时不加载数据
+
+   * VC 统一管理耗时操作的任务执行：
+
+     ```
+     [self addTasks:^{
+       UIImageView *img2 = [[UIImageView alloc] initWithFrame:CGRectMake(x,
+                           y,
+                           w,
+                           h)];
+       img2.image = [UIImage imageNamed:@"cell.jpg"];
+       [cell addSubview:img2];
+      }];
+     ```
+
+     ```
+     - (void)addTasks:(runloopBlock)task {
+         // 保存新任务
+         [self.tasksArr addObject:task];
+         // 如果超出最大任务数 丢弃之前的任务
+         if (self.tasksArr.count > _maxTaskCount) {
+             [self.tasksArr removeObjectAtIndex:0];
+         }
+     }
+     ```
+
+   * 添加runloop：
+
+     ```
+     - (void)viewDidLoad {
+         [super viewDidLoad];
+         
+         // 可以自己设置最大任务数量(我这里是当前页面最多同时显示几张照片)
+         self.maxTaskCount = 50;
+         [self.view addSubview:self.tableView];
+         
+         // 创建定时器 (保证runloop回调函数一直在执行)
+         CADisplayLink *displayLink = [CADisplayLink displayLinkWithTarget:self
+     																	selector:@selector(notDoSomething)];
+         [displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
+     
+         //添加runloop观察者
+         [self addRunloopObserver];
+     
+     }
+     ```
+
+     ```
+     // 添加runloop观察者
+     - (void)addRunloopObserver {
+         // 1.获取当前Runloop
+         CFRunLoopRef runloop = CFRunLoopGetCurrent();
+         
+         // 2.创建观察者
+         
+         // 2.0 定义上下文
+         CFRunLoopObserverContext context = {
+             0,
+             (__bridge void *)(self),
+             &CFRetain,
+             &CFRelease,
+             NULL
+         };
+         
+         // 2.1 定义观察者
+         static CFRunLoopObserverRef defaultModeObserver;
+         // 2.2 创建观察者
+         defaultModeObserver = CFRunLoopObserverCreate(kCFAllocatorDefault,
+                                                       kCFRunLoopBeforeWaiting,
+                                                       YES,
+                                                       0,
+                                                       &callBack, 
+                                                       &context);
+        
+         // 3. 给当前Runloop添加观察者
+         // CFRunLoopMode mode : 设置任务执行的模式
+         CFRunLoopAddObserver(runloop, defaultModeObserver, kCFRunLoopCommonModes);
+         
+         // C中出现 copy,retain,Create等关键字,都需要release
+         CFRelease(defaultModeObserver);
+     }
+     static void callBack(CFRunLoopObserverRef observer, CFRunLoopActivity activity, void *info) {
+         
+         ViewController *vc = (__bridge ViewController *)info;
+         
+         // 无任务  退出
+         if (vc.tasksArr.count == 0) return;
+         
+         // 从数组中取出任务
+         runloopBlock block = [vc.tasksArr firstObject];
+         
+         // 执行任务
+         if (block) {
+             block();
+         }
+         // 执行完任务之后移除任务
+         [vc.tasksArr removeObjectAtIndex:0];
+         
+     }
+     ```
+
+     
+
+     
+
+
 
 一般1和2处理后，就不会有内存暴涨问题了，但是1和2都有自己的缺陷，如下：
 
 * 清除缓存后的图得重新加载，还有何时清理缓存
 * 图片压缩后会失真，图片压缩比例怎么设定
+* 通过runloop判断在滑动结束时才加载图片，会导致图片有延迟加载的感觉，甚至有闪一下的感觉，牺牲了部分用户体验
 
 具体怎么处理还需要实际场景具体处理
 
