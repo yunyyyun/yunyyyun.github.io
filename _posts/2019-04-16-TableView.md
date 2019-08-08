@@ -2,11 +2,7 @@
 
 ## SDWebimageView + UITableView 的问题
 
-当UITableView里cell使用SDWebimageView加载网络图片时，会有如下几个问题：
-
-#### 内存暴涨
-
- 当UITableView不断翻页加载数据时，你会看到内存是不断爆涨的，原因有2个：
+当UITableView里cell使用SDWebimageView加载网络图片时，当UITableView不断翻页加载数据时，你会看到内存是不断涨的，原因有2个：
 
 1. decodedImageWithImage占用大量内存，通过Instruments的allocations可以看到，也可以在
 
