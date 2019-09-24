@@ -4,12 +4,12 @@
 
 当UITableView里cell使用SDWebimageView加载网络图片时，当UITableView不断翻页加载数据时，你会看到内存是不断涨的，原因有2个：
 
-1. decodedImageWithImage占用大量内存，通过Instruments的allocations可以看到，也可以在
+* decodedImageWithImage占用大量内存，通过Instruments的allocations可以看到，也可以在
 
 [SDWebImage 的 issue](https://github.com/SDWebImage/SDWebImage/issues/538) 看到关于这个的详细讨论。对应解决方法则是在翻页的代码里加入：
 
 ```objective-c
-		static int count = 0;
+	static int count = 0;
     NSLog(@" %d", count);
     ++count;
     if (count>3){ // 每翻2页清除一次缓存
@@ -24,7 +24,7 @@
 @property (strong, nonatomic, nonnull) NSCache *memCache;
 ```
 
-2. 图片过大，当处理太大的图片时， 会产生瞬间大内存， 解决方法则是对图片进行处理，要么服务端不要给大图，要么客户端对大图做等比的压缩：
+* 图片过大，当处理太大的图片时， 会产生瞬间大内存， 解决方法则是对图片进行处理，要么服务端不要给大图，要么客户端对大图做等比的压缩：
 
 ```objective-c
 if (data.length/(1024) > 128){
@@ -180,7 +180,7 @@ self.imageData = [NSMutableData dataWithData:data];
 
 具体怎么处理还需要实际场景具体处理
 
-## UITableView 滑动卡顿的一个场景
+## UITableView+3DTouch 滑动卡顿的一个场景
 
 当给cell添加3d Touch重按预览时，需要调用 registerForPreviewingWithDelegate 注册viewcontroller， 然后在 viewcontroller中实现*UIViewControllerPreviewingDelegate*的2个方法即可。如果不注意的话，一般可能会直接在cellForRowAtIndexPath里面调用 registerForPreviewingWithDelegate，这样做的后果是，当viewcontroller分页加载更多数据时会发现明显的卡顿。原因是没有考虑cell的复用机制，导致每次使用cell时不断重复registerForPreviewingWithDelegate， 对应解决如下：
 
@@ -204,7 +204,7 @@ self.imageData = [NSMutableData dataWithData:data];
 
 cell 添加isAllreadySetupPreviewingDelegate属性来判断是否已经注册过3d Touch功能，当该属性为false，并且cell补响应forceTouchCapability方法时，才调用registerForPreviewingWithDelegate。
 
-## SDWebimageView 与UITableView复用
+## SDWebimageView 与 UITableView复用
 
 又一个常见的问题是，当list快速滑动时，SDWebimageView怎么处理重复下载的问题，**原来SDWebImage在下载图片时，第一件事就是关闭imageView当前的下载操作**：
 
