@@ -1,64 +1,92 @@
 # Site settings
-title: Yunyyyun‘Note
-header-img: "img/facebook.jpg"
-tagline: "cn"  
-description: "yunyyyun|Think Different"  
-baseurl: ""
-url: "http://yunyyyun.github.io"  
+title: oukohou
+subtitle: [ 璇珠杂俎]
+keywords: oukohou
+description: 我梦扬州，便想到扬州梦我。幸会。微信公众号：oukohou.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://www.oukohou.wang/" # 你的域名
+page_no_title: "oukohou's blog" # 文章无标题时默认显示内容
+beian: # "备案号"
+author: oukohou
+email: oukohou@outlook.com
 
-# About/contact
-owner: 
-  name: "孟云"
-  email: zhaowuzichun@163.com
-  bio: ""
+# Build settings
+permalink: /:year/:month/:day/:title/
+exclude: ["README.md", "changelog.md", "server", "tools", "Pipfile"]
+plugins:
+  - jekyll-paginate
+  - jemoji
 
-# Data
-gavatar: http://dreamofbook.qiniudn.com/Az..png
-favicon: img/favicon.png
 
-douban_username:  
-twitter_username: 
-github_username: yunyyyun
-weibo_username: 
-facebook_username:
-zhihu_username: 
-
-# Build settings  
-# use Github Flavored Markdown !important  
-# document: http://jekyllrb.com/docs/configuration/#kramdown  
+# always get github's error email saying redcarpet is not supported,
+# so change it to kramdown.
 markdown: kramdown
-highlighter: pygments
-permalink: pretty
-paginate: 8
-exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
+highlighter: rouge
+kramdown:
+  input: GFM
 
 
-# http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-timezone: Asia/Shanghai
+# Pageinate settings
+paginate: 8 # 分页大小
+paginate_path: "page/:num/"
 
-# Defaults for posts
-defaults:
-  -
-    scope: 
-      path: ""
-      type: "posts"
-    values:
-      layout: "post"
-      author: "yunyyyun"
-      header-img: "img/facebook.jpg" # We don't want posts without a header image, that whould mean white on white
+# Search settings
+baidu_search: true
+google_search: # true
 
-# Comments 
-comments :
-  provider : duoshuo
-  duoshuo :
-    short_name : yunyyyun
-  disqus :
-      short_name : yunyyyun
+# Menu settings
+menu:
+  - page: 首页
+    directory: .
+    icon: icon-home
+  - page: 归档
+    directory: archives/
+    icon: icon-archive
+  - page: 标签
+    directory: tags/
+    icon: icon-tags
+  - page: 留言
+    directory: guestbook/
+    icon: icon-guestbook
+  - page: 关于
+    directory: about/
+    icon: icon-about
+#  - page: 订阅
+#    directory: feed.xml
+#    icon: icon-rss
 
-# Analytics and webmaster tools stuff goes here
-google_analytics: 
-google_verify:
-# https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
-bing_verify:
+# Link settings
+links: # 友情链接
 
-# Links to include in footer navigation
+  - title: ccslience's blog
+    url: http://ccslience.oukohou.wang/
+  - title: oukohou's github
+    url: https://github.com/oukohou
+#  - title:
+#    url: http://jekyllcn.com/
+  - title: Jekyll blog system
+    url: http://jekyllcn.com/
+
+
+# Google Analytics
+ga_track_id: 'UA-130856615-1'            # Format: UA-xxxxxx-xx
+ga_domain: www.oukohou.wang              # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
+
+
+# Code hub settings
+codehub: # 代码仓库
+  - title: Github
+    url: https://github.com/oukohou
+
+
+valine:
+  enable: true
+  app_id:  K1rbn2Oo0YMM04VuzdLS7Nzz-gzGzoHsz
+  app_key: AAsHbwVm8ofKFJ6ghGqqrXSU
+  notify: false # mail notifier , https://github.com/xCss/Valine/wiki
+  verify: false # Verification code
+  visitor: true
+  avatar: retro
+  placeholder: say something~~\n - 昵称 为你所要显示的评论的ID；\n - 邮箱 只有后台可见，仅供讨论过程中是否需要交流邮件而设置，请放心填写;\n - 网址 为你的评论的昵称的超链接。\n当然，以上都可以不写，评论依然会显示……
+  guest_info: nick,mail,link
+  pageSize: 10
