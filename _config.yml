@@ -1,8 +1,8 @@
 # Site settings
 title: oukohou
-subtitle: [ 洛北]
+subtitle: [ 璇珠杂俎]
 keywords: oukohou
-description: 说点什么好呢～.
+description: 我梦扬州，便想到扬州梦我。幸会。微信公众号：oukohou.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://www.oukohou.wang/" # 你的域名
 page_no_title: "oukohou's blog" # 文章无标题时默认显示内容
