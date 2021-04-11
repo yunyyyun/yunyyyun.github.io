@@ -123,7 +123,7 @@ int lagerNum = 1024 * 1024 * 2 ;
     }
 ```
 
-在我的钢琴app：[klaver](https://gitlab.com/yunyyyun/Klavier#)中也加入了常驻线程来处理琴谱解析的问题，由于对于这个app琴谱解析是常用的功能，为了避免每次切换下一曲时重新创建线程的开销而使用常驻线程。
+在我的钢琴app：[klaver](https://gitlab.com/oukohou/Klavier#)中也加入了常驻线程来处理琴谱解析的问题，由于对于这个app琴谱解析是常用的功能，为了避免每次切换下一曲时重新创建线程的开销而使用常驻线程。
 
 
 

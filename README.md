@@ -1,5 +1,5 @@
 <<<<<<< HEAD
-[我的独立博客](http://www.yunyyyun.wang/)
+[我的独立博客](http://www.oukohou.wang/)
 =================================
 
 写点什么好呢？
