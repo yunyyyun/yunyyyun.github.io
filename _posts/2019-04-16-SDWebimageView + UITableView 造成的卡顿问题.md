@@ -1,6 +1,13 @@
+---
+layout: post
+title:  "SDWebimageView + UITableView 卡顿问题"
+date:   2019-04-16 12:00:00 +0800--
+categories: [iOS]
+tags: [UITableView]  
 
+---
 
-## SDWebimageView + UITableView 的问题
+## SDWebImageView + UITableView 的问题
 
 当UITableView里cell使用SDWebimageView加载网络图片时，当UITableView不断翻页加载数据时，你会看到内存是不断涨的，原因有2个：
 
