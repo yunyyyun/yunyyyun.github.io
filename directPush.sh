@@ -1,8 +1,1 @@
-
-git add .
-
-git commit -m "bf"
-
-git push
-
-
+git add . && git commit -m "bf" && git push
