@@ -1,3 +1,11 @@
+---
+layout: post
+title:  "Wireshark 抓包分析 TCP"
+date:   2018-06-22 12:38:00 +0800--
+categories: [计算机]
+tags: [Wireshark, tcp]  
+---
+
 本文使用mac电脑Wireshark抓包，并对一次http链接做简单的分析
 
 ## Wireshark抓包
@@ -16,11 +24,11 @@ http://111.231.221.195/getMusicXmlData.php?file=sadness
 
 发起http，就能看到这次请求的所有tcp包，内容大致如下：
 
-![](/img/06-22-01.png)
+   ![](/assets/imgs/old/06-22-01.png)  
 
 如图所示，一个http请求包括如下过程：
 
-![](/img/06-22-02.png)
+   ![](/assets/imgs/old/06-22-02.png)
 
 1. 建立tcp连接，这个过程包括三个包（三次握手包），分别是
    客户端发起建立连接的请求包[SYN]（序号43）、
@@ -29,7 +37,7 @@ http://111.231.221.195/getMusicXmlData.php?file=sadness
 
 2. 连接建立后客户端即发起http请求包，如图序号46的包，展开后可以看到如下内容：
 
-   ![](/img/06-22-03.png)
+   ![](/assets/imgs/old/06-22-03.png)
 
    如图可以看到http头域各字段内容
 
