@@ -1,3 +1,12 @@
+
+---
+layout: post
+title:  "http、https、restful"
+date:   2018-06-27 12:38:00 +0800--
+categories: [计算机网络]
+tags: [http、https]  
+---
+
 ### http简介
 
 http是Hyper Text Transfer Protocol（超文本传输协议）的缩写，是应用层协议，用于从WWW服务器传输超文本到本地浏览器。

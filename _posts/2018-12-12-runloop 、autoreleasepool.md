@@ -1,3 +1,11 @@
+---
+layout: post
+title:  "Runloop, AutoreleasePool"
+date:   2018-12-12 12:38:00 +0800--
+categories: [iOS]
+tags: [runloop, AutoreleasePool]  
+---
+
 ## Runloop
 
 一个线程一次只能执行一个任务，执行完成后线程就会退出。RunLoop 机制能让线程随时处理事件但并不退出。这里说的随时是指：程序需要运行时就保持程序的持续运行，不需要的时候就进入休眠状态。
