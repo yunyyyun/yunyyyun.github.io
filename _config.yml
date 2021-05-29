@@ -75,16 +75,16 @@ ga_domain: auto
 # Code hub settings
 codehub: # 代码仓库
 
-  - title: demo: demo
+  - title: demo-demo
     url: https://gitlab.com/yunyyyun/demo.git
 
-  - title: AmzFFmpeg: 视频播放器
+  - title: AmzFFmpeg-视频播放器
     url: https://gitlab.com/yunyyyun/AmzFFmpeg.git
 
-  - title: mCube: 魔方
+  - title: mCube-魔方
     url: https://gitlab.com/yunyyyun/mCube.git
 
-  - title: klavier: 钢琴app
+  - title: klavier-钢琴app
     url: https://gitlab.com/yunyyyun/Klavier.git
 
   - title: Github
