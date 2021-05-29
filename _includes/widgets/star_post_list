@@ -1,16 +1,16 @@
 <div class="widget">
-    <div class="widget-title"><i class="icon-star"> 推荐文章</i></div>
+    <div class="widget-title"><i class="icon-star">部分代码 git 地址：</i></div>
     
     <ul class="post-list">
-        <li class="post-list-item"><a class="post-list-link" href="https://www.baidu.com">aaaaaa</a></li>
+        <li class="post-list-item"><a class="post-list-link" href="https://gitlab.com/yunyyyun/demo.git">demo</a></li>
     </ul>
 
     <ul class="post-list">
-        <li class="post-list-item"><a class="post-list-link" href="https://www.baidu.com">test1</a></li>
+        <li class="post-list-item"><a class="post-list-link" href="https://gitlab.com/yunyyyun/AmzFFmpeg.git">AmzFFmpeg：视频播放器</a></li>
     </ul>
 
     <ul class="post-list">
-        <li class="post-list-item"><a class="post-list-link" href="https://www.baidu.com">test2</a></li>
+        <li class="post-list-item"><a class="post-list-link" href="https://gitlab.com/yunyyyun/mCube.git">mCube：魔方</a></li>
     </ul>
 
     <ul class="post-list">
