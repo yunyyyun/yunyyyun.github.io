@@ -2,19 +2,19 @@
     <div class="widget-title"><i class="icon-star">部分代码 git 地址：</i></div>
     
     <ul class="post-list">
-        <li class="post-list-item"><a class="post-list-link" href="https://gitlab.com/yunyyyun/demo.git">demo</a></li>
+        <li class="post-list-item"><a class="post-list-link" href="https://gitlab.com/yunyyyun/demo.git">demo: demo</a></li>
     </ul>
 
     <ul class="post-list">
-        <li class="post-list-item"><a class="post-list-link" href="https://gitlab.com/yunyyyun/AmzFFmpeg.git">AmzFFmpeg：视频播放器</a></li>
+        <li class="post-list-item"><a class="post-list-link" href="https://gitlab.com/yunyyyun/AmzFFmpeg.git">AmzFFmpeg: 视频播放器</a></li>
     </ul>
 
     <ul class="post-list">
-        <li class="post-list-item"><a class="post-list-link" href="https://gitlab.com/yunyyyun/mCube.git">mCube：魔方</a></li>
+        <li class="post-list-item"><a class="post-list-link" href="https://gitlab.com/yunyyyun/mCube.git">mCube: 魔方</a></li>
     </ul>
 
     <ul class="post-list">
-        <li class="post-list-item"><a class="post-list-link" href="https://www.baidu.com">test3</a></li>
+        <li class="post-list-item"><a class="post-list-link" href="https://gitlab.com/yunyyyun/Klavier.git">klavier: 钢琴app</a></li>
     </ul>
     
 </div>
